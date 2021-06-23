@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
+  z-index: 100;
+}
+
+.header__img {
+  width: 7rem;
+}
+
+.header__Input {
+  width: 58rem;
+  height: 2.3rem;
+}
+.header__SearchIcon {
+  font-size: 0.75rem;
+}
+
+.header__cartIcon {
+  font-size: 2rem;
+}

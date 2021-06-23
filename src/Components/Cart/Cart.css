@@ -1,0 +1,23 @@
+.cart__ItemContainer {
+  margin: 2rem 1rem 1rem 2rem;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  border: 1px white solid;
+}
+.cart__Review {
+  margin-left: 5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 90%;
+  border: 1px white solid;
+}
+.cart__QtnUpdateButton {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px gray solid;
+}
+.cart__QtnInput {
+  width: 50px;
+  text-align: center;
+}
