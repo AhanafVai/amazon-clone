@@ -1,17 +1,25 @@
 //* Import
-import React from "react";
+import React, { useContext } from "react";
 import GeoLocation from "../GeoLocation/GeoLocation";
 import Logo from "../../Assets/Image/amazon-logo.png";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
+import { useCart } from "react-use-cart";
 import "./Header.css";
+import { AuthContext } from "../Context/AuthProvider";
+import app from "../Authentication/firebase";
 
 const Header = () => {
+  const { currentUser } = useContext(AuthContext);
+  const { totalUniqueItems } = useCart();
   return (
-    <div className="header d-flex align-items-center">
-      <img className="header__img mx-2" src={Logo} alt="Amazon" />
-      <GeoLocation />
+    <div className="header d-flex align-items-center ">
+      <Link to="/">
+        <img className="header__img mx-2" src={Logo} alt="Amazon" />
+      </Link>
+
+      {/* <GeoLocation /> */}
 
       <input type="text" className="header__Input" />
       <button className="btn btn-warning">
@@ -19,19 +27,31 @@ const Header = () => {
       </button>
 
       <div className="mx-4 text-white ">
-        <p>
-          Hello, <br /> Sign In
-        </p>
+        {!currentUser ? (
+          <Link to="/login" className="nav-item nav-link">
+            Login
+          </Link>
+        ) : (
+          <div>
+            {" "}
+            <Link
+              className="nav-item nav-link"
+              onClick={() => app.auth().signOut()}
+            >
+              <span>{currentUser.email}</span> Logout{" "}
+            </Link>
+          </div>
+        )}
       </div>
       <div className="mx-4 text-white ">
-        <h6>Orders </h6>
+        <span>Orders </span>
       </div>
 
       <div className="text-white d-flex">
-        <Link to="/cart">
+        <Link to="/cart" className="text-white">
           <MdAddShoppingCart className="header__cartIcon" />
         </Link>{" "}
-        <p>0</p>
+        <b> {totalUniqueItems} </b>
       </div>
     </div>
   );

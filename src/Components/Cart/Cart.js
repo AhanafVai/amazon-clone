@@ -67,7 +67,11 @@ const Cart = () => {
                     >
                       -
                     </button>
-                    <button class="btn btn-danger ms-3" type="button">
+                    <button
+                      onClick={() => removeItem(item.id)}
+                      class="btn btn-danger ms-3"
+                      type="button"
+                    >
                       Delete
                     </button>
                   </div>
@@ -84,10 +88,10 @@ const Cart = () => {
               Subtotal (Items:{totalItems}) :{cartTotal}{" "}
             </h5>
 
-            <button className="btn btn-warning mt-4">
+            <Link to="/checkout" className="btn btn-warning mt-4">
               {" "}
               Proceed to checkout
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ const Carousel = () => {
     <div
       style={{ height: "15rem" }}
       id="carouselExampleControls"
-      class="carousel slide"
+      class="carousel slide "
       data-bs-ride="carousel"
     >
       <div class="carousel-inner">
