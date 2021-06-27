@@ -43,9 +43,9 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="mx-4 text-white ">
+      <Link to="/orders" className="mx-4 text-white nav-link nav-item">
         <span>Orders </span>
-      </div>
+      </Link>
 
       <div className="text-white d-flex">
         <Link to="/cart" className="text-white">

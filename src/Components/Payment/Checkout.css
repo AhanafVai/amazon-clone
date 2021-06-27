@@ -1,0 +1,7 @@
+.payment__Container {
+  margin: 2rem 1rem 1rem 2rem;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  border: 1px white solid;
+}

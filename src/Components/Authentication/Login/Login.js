@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from "react"; // add {useCallback, useContext}
 import { AuthContext } from "../../Context/AuthProvider";
 import { Link } from "react-router-dom";
-import { withRouter, Redirect } from "react-router";
+import { Redirect } from "react-router";
 import app from "../firebase";
 import Logo from "../../../Assets/Image/amazon-logo (black-version).png";
 

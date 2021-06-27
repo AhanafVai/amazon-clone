@@ -10,7 +10,8 @@ import Signup from "./Components/Authentication/Signup/Signup";
 import Login from "./Components/Authentication/Login/Login";
 import { AuthProvider } from "./Components/Context/AuthProvider";
 import PrivateRoute from "./Components/Authentication/Private/PrivateRoute";
-import Payment from "./Components/Payment/Payment";
+import Checkout from "./Components/Payment/Checkout";
+import Orders from "./Components/Orders/Orders";
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
-            <PrivateRoute exact path="/cart" component={Cart} />
-            <Route exact path="/checkout" component={Payment} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/orders" component={Orders} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
           </Switch>
