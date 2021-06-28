@@ -49,7 +49,7 @@ const Signup = ({ history }) => {
           <div className="card-body">
             <h1 className="card-title mb-3">Create account</h1>
             {error && (
-              <div class="alert alert-danger" role="alert">
+              <div className="alert alert-danger" role="alert">
                 {error}
               </div>
             )}
@@ -96,19 +96,19 @@ const Signup = ({ history }) => {
             <p className="pt-4 text-muted">
               <small>
                 By creating an account, you agree to Amazon's{" "}
-                <a
+                <Link
                   className="text-decoration-none"
-                  href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088"
+                  to="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088"
                 >
                   Conditions of Use
-                </a>{" "}
+                </Link>{" "}
                 and{" "}
-                <a
+                <Link
                   className="text-decoration-none"
-                  href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496"
+                  to="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496"
                 >
                   Privacy Notice.
-                </a>
+                </Link>
               </small>
             </p>
             <p>

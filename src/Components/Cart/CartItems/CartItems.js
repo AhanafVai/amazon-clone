@@ -37,7 +37,7 @@ const CartItems = () => {
                     onClick={() =>
                       updateItemQuantity(item.id, item.quantity + 1)
                     }
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     type="button"
                   >
                     +
@@ -52,14 +52,14 @@ const CartItems = () => {
                     onClick={() =>
                       updateItemQuantity(item.id, item.quantity - 1)
                     }
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     type="button"
                   >
                     -
                   </button>
                   <button
                     onClick={() => removeItem(item.id)}
-                    class="btn btn-danger ms-3"
+                    className="btn btn-danger ms-3"
                     type="button"
                   >
                     Remove Item

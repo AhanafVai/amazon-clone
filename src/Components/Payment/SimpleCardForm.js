@@ -1,7 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useCart } from "react-use-cart";
 
 const SimpleCardForm = ({ handelPayment }) => {
+  const History = useHistory();
+  const { emptyCart } = useCart();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -28,6 +32,8 @@ const SimpleCardForm = ({ handelPayment }) => {
       setPaymentSuccess(paymentMethod.id);
       setPaymentError("");
       handelPayment(paymentMethod.id);
+      emptyCart();
+      History.push("/");
     }
   };
   return (

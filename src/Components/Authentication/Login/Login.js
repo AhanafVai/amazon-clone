@@ -17,7 +17,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/cart");
+        history.push("/");
       } catch (error) {
         alert(error);
       }

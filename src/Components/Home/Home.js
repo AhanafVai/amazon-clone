@@ -3,11 +3,11 @@ import React from "react";
 import Products from "../Products/Products";
 import Carousel from "./Carousel/Carousel";
 
-const Home = () => {
+const Home = ({ items }) => {
   return (
     <div>
       <Carousel />
-      <Products />
+      <Products items={items} />
     </div>
   );
 };
