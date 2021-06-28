@@ -1,6 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+//* Imports & Dependencies
+import React, { useEffect, useState } from "react";
 import Product from "./Product/Product";
 
 const Products = () => {
@@ -16,9 +15,15 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  if (!items) return <h1>...Loading</h1>;
+  //? Loading process
+  if (!items)
+    return (
+      <div class="d-flex justify-content-center">
+        <span class="spinner-border text-light" role="status"></span>
+      </div>
+    );
   return (
-    <div className="  row ">
+    <div className="row mx-auto">
       {items.map((item) => (
         <Product key={item.id} item={item} />
       ))}

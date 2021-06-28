@@ -14,7 +14,7 @@ const Orders = () => {
   }, []);
 
   return (
-    <div className="row d-flex justify-content-center">
+    <div className="row mx-auto">
       {orders.map((order) => (
         <OrderContainer key={order._id} order={order} />
       ))}

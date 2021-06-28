@@ -1,4 +1,5 @@
-import React, { useCallback, useContext } from "react"; // add {useCallback, useContext}
+//* Imports & Dependencies
+import React, { useCallback, useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
@@ -6,6 +7,8 @@ import app from "../firebase";
 import Logo from "../../../Assets/Image/amazon-logo (black-version).png";
 
 const Login = ({ history }) => {
+  //? current user from firebase
+  const { currentUser } = useContext(AuthContext);
   const handleLogin = useCallback(
     async (event) => {
       event.preventDefault();
@@ -21,9 +24,10 @@ const Login = ({ history }) => {
     },
     [history]
   );
-  const { currentUser } = useContext(AuthContext);
+
+  //? prevent can not read property error
   if (currentUser) {
-    return <Redirect to="/cart" />;
+    return <Redirect to="/" />;
   }
 
   return (
@@ -35,6 +39,7 @@ const Login = ({ history }) => {
         <span className="d-flex justify-content-center mb-3">
           <img style={{ width: "150px" }} src={Logo} alt="" />
         </span>
+        {/* Form section */}
         <form
           onSubmit={handleLogin}
           className="card p-2"
@@ -71,7 +76,7 @@ const Login = ({ history }) => {
             <button type="submit" className="btn btn-warning">
               Sign In
             </button>
-            <p className="pt-4">
+            <p className="pt-4 text-muted">
               <small>
                 By continuing, you agree to Amazon's{" "}
                 <a
@@ -80,7 +85,7 @@ const Login = ({ history }) => {
                 >
                   Conditions of Use
                 </a>{" "}
-                and
+                and{" "}
                 <a
                   className="text-decoration-none"
                   href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496"

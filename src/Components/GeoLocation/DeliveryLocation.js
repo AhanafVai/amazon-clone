@@ -1,3 +1,6 @@
+//! Note: used Geolocation db API for getting location
+
+//* Imports and Dependencies
 import React, { useEffect, useState } from "react";
 
 const DeliveryLocation = () => {
@@ -16,7 +19,7 @@ const DeliveryLocation = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {location ? (
         <div>
           <span>
@@ -29,11 +32,11 @@ const DeliveryLocation = () => {
       ) : (
         <div>
           <span>
-            Sorry, we are facing some technical problems try again later.
+            Sorry, we are facing some technical difficulties try again later.
           </span>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

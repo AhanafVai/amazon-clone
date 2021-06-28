@@ -1,3 +1,4 @@
+//* Imports & Dependencies
 import firebase from "firebase";
 import "firebase/auth";
 

@@ -1,3 +1,4 @@
+//* Imports & Dependencies
 import React from "react";
 import Banner1 from "../../../Assets/Image/shopping-banner-1.jpg";
 import Banner2 from "../../../Assets/Image/shopping-banner-2.jpg";
@@ -9,7 +10,7 @@ const Carousel = () => {
     <div
       style={{ height: "15rem" }}
       id="carouselExampleControls"
-      class="carousel slide "
+      class="carousel slide"
       data-bs-ride="carousel"
     >
       <div class="carousel-inner">
@@ -45,7 +46,6 @@ const Carousel = () => {
         data-bs-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
       </button>
       <button
         class="carousel-control-next"
@@ -54,7 +54,6 @@ const Carousel = () => {
         data-bs-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
       </button>
     </div>
   );

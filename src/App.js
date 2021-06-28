@@ -10,8 +10,9 @@ import Signup from "./Components/Authentication/Signup/Signup";
 import Login from "./Components/Authentication/Login/Login";
 import { AuthProvider } from "./Components/Context/AuthProvider";
 import PrivateRoute from "./Components/Authentication/Private/PrivateRoute";
-import Checkout from "./Components/Payment/Checkout";
+import Checkout from "./Components/Checkout/Checkout";
 import Orders from "./Components/Orders/Orders";
+import "./App.css";
 
 function App() {
   return (

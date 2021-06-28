@@ -1,46 +1,77 @@
 import React from "react";
-import { FaQrcode, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaTrashAlt,
+  FaQrcode,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 
 const OrderContainer = ({ order }) => {
-  return (
-    <div
-      className="card text-dark bg-light mb-3 mx-auto mt-5"
-      style={{ maxWidth: "20rem", height: "30rem" }}
-    >
-      <div className="card-header">
-        <h2 className="text-center">Amazon</h2>
-      </div>
-      <div className="card-body">
-        <div className="border-bottom border-2 mb-2">
-          <h6 className="card-title">Email: {order.email}</h6>
-        </div>
-        <div className="border-bottom border-2 ">
-          <h6>
-            <small className="d-flex justify-content-between">
-              <span> Product:</span> <span>{order.title}</span>
-              <span> </span> <span> $ {order.price}</span>
-            </small>
-          </h6>
-          <h6>
-            <small className="d-flex justify-content-between">
-              <span> Total: $</span>
-              <span>{order.totalPrice}</span>
-            </small>
-          </h6>
-        </div>
-        <div className="mt-2 text-center">
-          <h4>Thank You For Shopping</h4>
-          <span style={{ fontSize: "3rem" }}>
-            <FaQrcode />
-          </span>
-          <p>PaymentId: {order.paymentId}</p>
+  const deleteOrder = (id) => {
+    fetch(`http://localhost:5000/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          alert("Deleted item");
+        }
+      });
+  };
 
-          <p> follow us on </p>
-          <h4>
-            <FaFacebook />
-            <FaInstagram />
-            <FaTwitter />
-          </h4>
+  console.log(order);
+  return (
+    <div className="col-md-4 d-flex justify-content-center">
+      <div className="card my-5 p-3" style={{ maxWidth: "20rem" }}>
+        <h2 className="text-center">Amazon</h2>
+
+        <div className="card-body">
+          <h6 className="card-title">Email: {order.email}</h6>
+          <hr />
+
+          <span className="row">
+            {order.cartItems.map((items, index) => (
+              <p className="d-flex justify-content-between">
+                <small>
+                  {index + 1}. {items.title}
+                </small>
+                ${items.price}
+              </p>
+            ))}
+          </span>
+          <h6>
+            <small className="d-flex justify-content-between">
+              <b> Total Price:</b>
+              <span>$ {order.totalPrice}</span>
+            </small>
+          </h6>
+          <hr />
+
+          <div className="mt-2 text-center">
+            <h5>Thank You For Shopping</h5>
+            <span style={{ fontSize: "2rem" }}>
+              <FaQrcode />
+            </span>
+            <p>
+              {" "}
+              <small> {order.paymentId}</small>
+            </p>
+
+            <p> follow us on </p>
+            <h5>
+              <FaFacebook />
+              <FaInstagram />
+              <FaTwitter />
+            </h5>
+            <button
+              onClick={() => deleteOrder(order._id)}
+              type="button"
+              className="btn  btn-outline-dark row "
+            >
+              <FaTrashAlt />
+            </button>
+          </div>
         </div>
       </div>
     </div>

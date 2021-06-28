@@ -1,6 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+//! Note: used Geolocation db API for getting location
+
+//* Imports and Dependencies
+import React, { useState, useEffect } from "react";
 
 const GeoLocation = () => {
   const [location, setLocation] = useState(null);
@@ -18,18 +19,17 @@ const GeoLocation = () => {
   }, []);
 
   return (
-    <div className="text-white px-4">
+    <div className="text-white mx-3">
       {location ? (
-        <p>
+        <small>
           {" "}
-          <small> Delivery to</small> <br /> <b> {location.city}</b>
-        </p>
+          Delivery to <b> {location.city}</b>
+        </small>
       ) : (
-        <p>
-          Delivery to:
-          <br />
-          Not Specified
-        </p>
+        <small>
+          {" "}
+          Delivery to <b> not specified</b>
+        </small>
       )}
     </div>
   );

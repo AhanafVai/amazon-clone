@@ -1,11 +1,14 @@
-import React, { useCallback } from "react";
-import { useState } from "react";
+//* Imports & Dependencies
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../../Assets/Image/amazon-logo (black-version).png";
 import app from "../firebase";
+import Logo from "../../../Assets/Image/amazon-logo (black-version).png";
 
 const Signup = ({ history }) => {
+  //? states
   const [error, setError] = useState(null);
+
+  //? Signup with Firebase
   const handleSignUp = useCallback(
     async (event) => {
       event.preventDefault();
@@ -36,6 +39,8 @@ const Signup = ({ history }) => {
         <span className="d-flex justify-content-center mb-3">
           <img style={{ width: "150px" }} src={Logo} alt="" />
         </span>
+
+        {/* Form section */}
         <form
           onSubmit={handleSignUp}
           className="card p-2"
@@ -85,10 +90,10 @@ const Signup = ({ history }) => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-warning">
+            <button type="submit" className="my-2 btn btn-warning ">
               Create your Amazon account
             </button>
-            <p className="pt-4">
+            <p className="pt-4 text-muted">
               <small>
                 By creating an account, you agree to Amazon's{" "}
                 <a
@@ -97,7 +102,7 @@ const Signup = ({ history }) => {
                 >
                   Conditions of Use
                 </a>{" "}
-                and
+                and{" "}
                 <a
                   className="text-decoration-none"
                   href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496"

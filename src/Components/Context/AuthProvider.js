@@ -1,6 +1,8 @@
+//* Imports & Dependencies
 import React, { createContext, useEffect, useState } from "react";
 import app from "../Authentication/firebase";
 
+//? Export Auth Context
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
