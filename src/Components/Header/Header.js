@@ -1,25 +1,26 @@
 //* Import
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import GeoLocation from "../GeoLocation/GeoLocation";
 import Logo from "../../Assets/Image/amazon-logo.png";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
 import { useCart } from "react-use-cart";
-import "./Header.css";
 import { AuthContext } from "../Context/AuthProvider";
 import app from "../Authentication/firebase";
 import { useEffect } from "react";
 import Home from "../Home/Home";
 
+import "./Header.css";
 const Header = () => {
   const [search, setSearch] = useState(" ");
   const [items, setItems] = useState(null);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+
+  //   setSearch(e.target.value);
+  // };
 
   useEffect(() => {
     fetch("http://localhost:5000/getProducts?search=" + search)
@@ -77,6 +78,7 @@ const Header = () => {
                       <Link className="dropdown-item">jewelery</Link>
                     </li>
                   </ul>
+
                   <input
                     type="text"
                     style={{ width: "40rem" }}
@@ -84,11 +86,7 @@ const Header = () => {
                     aria-label="Text input with dropdown button"
                     onChange={(e) => setSearch(e.target.value)}
                   />
-                  <button
-                    type="button"
-                    onClick={handleSearch}
-                    className="btn btn-warning"
-                  >
+                  <button className="btn btn-warning">
                     <FaSearch className="header__SearchIcon" />
                   </button>
                 </div>
