@@ -1,5 +1,5 @@
 //* Import
-import React, { useCallback, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import GeoLocation from "../GeoLocation/GeoLocation";
 import Logo from "../../Assets/Image/amazon-logo.png";
 import { Link } from "react-router-dom";
@@ -12,24 +12,37 @@ import { useEffect } from "react";
 import Home from "../Home/Home";
 
 import "./Header.css";
+
 const Header = () => {
+  //? states
+  const { currentUser } = useContext(AuthContext);
+  const { totalUniqueItems } = useCart();
   const [search, setSearch] = useState(" ");
   const [items, setItems] = useState(null);
+  const [filteredItems, setFilteredItems] = useState(items);
 
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
+  //? Get data onLoad
+  useEffect(() => {
+    setFilteredItems(items);
+  }, [items]);
 
-  //   setSearch(e.target.value);
-  // };
+  //? Filter Data
+  const filterItems = (category) => {
+    if (category === "all") {
+      setFilteredItems(items);
+      return;
+    }
+    const newItems = items.filter((item) => item.category === category);
+    setFilteredItems(newItems);
+  };
 
+  //? Input search option
   useEffect(() => {
     fetch("http://localhost:5000/getProducts?search=" + search)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [search]);
 
-  const { currentUser } = useContext(AuthContext);
-  const { totalUniqueItems } = useCart();
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,20 +75,48 @@ const Header = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    All
+                    Category
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item">women's clothing</Link>
+                      <button
+                        onClick={() => filterItems("all")}
+                        className="dropdown-item"
+                      >
+                        all
+                      </button>
                     </li>
                     <li>
-                      <Link className="dropdown-item">men's clothing</Link>
+                      <button
+                        onClick={() => filterItems("women's clothing")}
+                        className="dropdown-item"
+                      >
+                        women's clothing
+                      </button>
                     </li>
                     <li>
-                      <Link className="dropdown-item">electronics</Link>
+                      <button
+                        onClick={() => filterItems("men's clothing")}
+                        className="dropdown-item"
+                      >
+                        men's clothing
+                      </button>
                     </li>
                     <li>
-                      <Link className="dropdown-item">jewelery</Link>
+                      <button
+                        onClick={() => filterItems("electronics")}
+                        className="dropdown-item"
+                      >
+                        electronics
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => filterItems("jewelery")}
+                        className="dropdown-item"
+                      >
+                        jewelery
+                      </button>
                     </li>
                   </ul>
 
@@ -95,7 +136,7 @@ const Header = () => {
               <li className="nav-item nav-link">
                 {!currentUser ? (
                   <Link to="/login" className="nav-item nav-link">
-                    Hello Login
+                    Hello <br /> Login
                   </Link>
                 ) : (
                   <div>
@@ -104,7 +145,7 @@ const Header = () => {
                       className="nav-item nav-link"
                       onClick={() => app.auth().signOut()}
                     >
-                      <span>{currentUser.email}</span> Logout{" "}
+                      <span>{currentUser.email}</span> <br /> Logout{" "}
                     </Link>
                   </div>
                 )}
@@ -124,7 +165,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <Home items={items} />
+      <Home filteredItems={filteredItems} />
     </>
   );
 };

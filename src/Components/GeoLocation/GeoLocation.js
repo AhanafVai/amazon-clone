@@ -23,12 +23,12 @@ const GeoLocation = () => {
       {location ? (
         <small>
           {" "}
-          Delivery to <b> {location.city}</b>
+          Delivery to <br /> <b> {location.city}</b>
         </small>
       ) : (
         <small>
           {" "}
-          Delivery to <b> not specified</b>
+          Delivery to <br /> <b> not specified</b>
         </small>
       )}
     </div>
