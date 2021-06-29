@@ -1,5 +1,5 @@
 //* Import
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import GeoLocation from "../GeoLocation/GeoLocation";
 import Logo from "../../Assets/Image/amazon-logo.png";
 import { Link } from "react-router-dom";
@@ -8,10 +8,10 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { useCart } from "react-use-cart";
 import { AuthContext } from "../Context/AuthProvider";
 import app from "../Authentication/firebase";
-import { useEffect } from "react";
 import Home from "../Home/Home";
 
 import "./Header.css";
+import Category from "./Category/Category";
 
 const Header = () => {
   //? states
@@ -79,44 +79,9 @@ const Header = () => {
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <button
-                        onClick={() => filterItems("all")}
-                        className="dropdown-item"
-                      >
-                        all
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => filterItems("women's clothing")}
-                        className="dropdown-item"
-                      >
-                        women's clothing
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => filterItems("men's clothing")}
-                        className="dropdown-item"
-                      >
-                        men's clothing
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => filterItems("electronics")}
-                        className="dropdown-item"
-                      >
-                        electronics
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => filterItems("jewelery")}
-                        className="dropdown-item"
-                      >
-                        jewelery
-                      </button>
+                      {items && (
+                        <Category items={items} filterItems={filterItems} />
+                      )}
                     </li>
                   </ul>
 
@@ -165,7 +130,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <Home filteredItems={filteredItems} />
+      {filteredItems && <Home filteredItems={filteredItems} />}
     </>
   );
 };
