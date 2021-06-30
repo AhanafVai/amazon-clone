@@ -14,7 +14,7 @@ const CartItems = () => {
         {items.map((item) => {
           return (
             <div
-              key={item.id}
+              key={item._id}
               className="d-flex p-2 align-items-center border-bottom"
             >
               <img
@@ -35,7 +35,7 @@ const CartItems = () => {
                 <div className="input-group d-flex">
                   <button
                     onClick={() =>
-                      updateItemQuantity(item.id, item.quantity + 1)
+                      updateItemQuantity(item._id, item.quantity + 1)
                     }
                     className="btn btn-secondary"
                     type="button"
@@ -50,7 +50,7 @@ const CartItems = () => {
 
                   <button
                     onClick={() =>
-                      updateItemQuantity(item.id, item.quantity - 1)
+                      updateItemQuantity(item._id, item.quantity - 1)
                     }
                     className="btn btn-secondary"
                     type="button"
@@ -58,7 +58,7 @@ const CartItems = () => {
                     -
                   </button>
                   <button
-                    onClick={() => removeItem(item.id)}
+                    onClick={() => removeItem(item._id)}
                     className="btn btn-danger ms-3"
                     type="button"
                   >

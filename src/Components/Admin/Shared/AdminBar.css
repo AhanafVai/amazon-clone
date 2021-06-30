@@ -1,0 +1,7 @@
+.admin_bar__link {
+  color: #f5942c;
+}
+.admin_bar__link:hover {
+  background-color: #f5942c;
+  color: black;
+}

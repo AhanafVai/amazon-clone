@@ -10,7 +10,7 @@ const Product = (props) => {
     <div className=" col-md-3 d-flex justify-content-center ">
       <div className="card m-3 p-4" style={{ width: "20rem", height: "30rem" }}>
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          <h6 className="card-title">{title}</h6>
         </div>
         <img
           style={{ width: "10rem", height: "10rem" }}

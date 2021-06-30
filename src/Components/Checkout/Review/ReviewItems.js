@@ -9,7 +9,7 @@ const ReviewItems = () => {
       {items.map((item) => {
         return (
           <>
-            <div key={item.id} className="d-flex p-2 align-items-center ">
+            <div key={item._id} className="d-flex p-2 align-items-center ">
               <img
                 style={{ width: "15rem", height: "15rem", padding: "2rem" }}
                 src={item.image}

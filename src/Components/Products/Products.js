@@ -13,7 +13,7 @@ const Products = ({ items }) => {
   return (
     <div className="row mx-auto">
       {items.map((item) => (
-        <Product key={item.id} item={item} />
+        <Product key={item._id} item={item} />
       ))}
     </div>
   );
