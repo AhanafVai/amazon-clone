@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+![Amazontwin Overview](https://user-images.githubusercontent.com/76809882/123843427-b5b48c00-d933-11eb-9cf0-3d8506c5a3dc.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Amazone Clone
 
-In the project directory, you can run:
+ The name of this app is quite self-explainitory. It is an 
+ clone of the famous website of the e-commerce giant Amazone.
+ The main objectives of this website are following 
 
-### `npm start`
+ - To know the importance of E-commerce in today’s environment.
+ - Informal business to business transaction using internet. Ex: e-commerce.
+ - Consumer transaction with business or another member of public, using internet ecommerce.
+ - Consumers can buy from a far place without the hazard of travelling.
+ - It will be beneficial for everyone especially the person with disabilities and busy parents.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Demo
 
-### `npm test`
+Live Preview: https://amazontwin.netlify.app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
+## Installation 
 
-### `npm run build`
+To clone and run this application, you'll need 
+[Git](https://github.com/git/git-scm.com) 
+and Node.js (which comes with npm)
+ installed on your computer. From your command line:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash 
+# Clone this repository
+$ git clone https://github.com/AhanafVai/amazon-clone.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Go into the repository
+$ cd filename
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+$ npm install
 
-### `npm run eject`
+# Run the app
+$ npm start
+```
+    
+## Feedback
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Want to contribute? Great!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To fix a bug or enhance an existing module, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Fork the repo
+- Create a new branch (`git checkout -b 'improve-feature'`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin 'improve-feature'`)
+- Create a Pull Request
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+  
+## Bug / Feature Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If you find a bug (the website couldn't handle the query
+ and / or gave undesired results),
+kindly open an issue [here](https://github.com/AhanafVai/amazon-clone/issues/new)
+by including your search query and the expected result.
 
-### Making a Progressive Web App
+If you'd like to request a new function, feel free
+ to do so by opening 
+ an issue [here](https://github.com/AhanafVai/amazon-clone/issues/new).
+  Please include sample queries and their corresponding results.
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+It a marketplace on the
+Internet, through which we can bring a population of
+ millions of people under a single platform,
+where the buyer and seller can exchange and transport 
+good from one place to another, over
+networked computers.
 
-### Advanced Configuration
+### Key features
+- Dynamica location
+- Responsive support
+- Dynamic search input/category
+- Cross platform
+- Checkout page (Payment gateway, Review item, Cart)
+- User authentication (client-side, Protected routes )
+- Order review (Individual customer order history, order history can also be removed if the customer desire.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+  
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Frontend:** `React` `Context` `React-router` `Bootstrap`
+             `Stripe` `firebase` 
 
-### `npm run build` fails to minify
+**Backend:** `Node` `Express` `Mongo DB` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+## Todos
+
+- Adding admin panel 
+
+- Add more Products
+
+  
+## Acknowledgements
+
+ ### Design Inspiratrion
+  - [Amazon](https://www.amazon.com/)
+### Technical helpers
+ - [Clever Programmer YT](https://www.youtube.com/c/CleverProgrammer/featured)
+ - [Setting up Firebase Authentication](https://www.wrappixel.com/react-firebase-authentication/)
+ - [Implementing product filter option](https://www.youtube.com/watch?v=a_7Z7C_JCyo)
+ - [payment gateway](https://web.programming-hero.com/)
+ - [Simple Frontend Pagination](https://www.youtube.com/watch?v=IYCa1F-OWmk&list=PLvFFaLwksdhIfpMh297bC26LOA7bm620x&index=16)
+
+
+  
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+|
+GitHub: [@AhanafVai](https://github.com/AhanafVai)
+|
+LinkedIn: [Ahanaf Abdullah](https://www.linkedin.com/in/ahanafabdullah9/)
+
+  
