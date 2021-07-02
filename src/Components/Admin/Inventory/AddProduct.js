@@ -18,7 +18,7 @@ const AddProduct = ({ handleAddProducts }) => {
       image: imageURL,
     };
 
-    fetch("http://localhost:5000/addProduct", {
+    fetch("https://hidden-reef-73681.herokuapp.com/addProduct", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),

@@ -22,7 +22,7 @@ const ProcessPayment = () => {
       totalPrice: cartTotal,
     };
 
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://hidden-reef-73681.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(orderDetails),

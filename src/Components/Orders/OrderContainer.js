@@ -9,7 +9,7 @@ import {
 
 const OrderContainer = ({ order }) => {
   const deleteOrder = (id) => {
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://hidden-reef-73681.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

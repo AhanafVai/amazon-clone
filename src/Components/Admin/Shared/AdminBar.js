@@ -7,9 +7,9 @@ const AdminBar = () => {
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <span className="navbar-brand mb-0 h1">
+          <Link to="/" className="navbar-brand mb-0 h1">
             <img className="header__img mx-3" src={Logo} alt="Amazon" />
-          </span>
+          </Link>
           <button
             className="btn btn-outline-warning"
             type="button"

@@ -8,7 +8,10 @@ const Orders = () => {
   const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getOrder?email=" + currentUser.email)
+    fetch(
+      "https://hidden-reef-73681.herokuapp.com/getOrder?email=" +
+        currentUser.email
+    )
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);

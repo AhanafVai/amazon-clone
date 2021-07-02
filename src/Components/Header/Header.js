@@ -38,14 +38,19 @@ const Header = () => {
 
   //? Input search option
   useEffect(() => {
-    fetch("http://localhost:5000/getProducts?search=" + search)
+    fetch(
+      "https://hidden-reef-73681.herokuapp.com/getProducts?search=" + search
+    )
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [search]);
 
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/getAdmin?email=" + currentUser.email)
+    fetch(
+      "https://hidden-reef-73681.herokuapp.com/getAdmin?email=" +
+        currentUser.email
+    )
       .then((res) => res.json())
       .then((data) => setIsAdmin(data));
   }, []);
@@ -122,12 +127,6 @@ const Header = () => {
                   </div>
                 )}
               </li>
-
-              {/* <li className="nav-item nav-link">
-                <Link to="/dashboard" className="nav-link">
-                  <span>Dashboard</span>
-                </Link>
-              </li> */}
 
               <li className="nav-item nav-link">
                 <Link to="/orders" className="nav-link">

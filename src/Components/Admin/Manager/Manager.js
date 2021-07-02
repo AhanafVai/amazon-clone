@@ -6,13 +6,13 @@ const Manager = () => {
   const [loadProduct, setLoadProduct] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:5000/getProductsManager")
+    fetch("https://hidden-reef-73681.herokuapp.com/getProductsManager")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
   const loadProducts = (id) => {
-    fetch(`http://localhost:5000/getProductManager/${id}`)
+    fetch(`https://hidden-reef-73681.herokuapp.com/getProductManager/${id}`)
       .then((res) => res.json())
       .then((data) => setLoadProduct(data));
   };
@@ -22,7 +22,7 @@ const Manager = () => {
     const category = document.getElementById("category").value;
     const update = { id, price, category };
 
-    fetch(`http://localhost:5000/updateProduct/${id}`, {
+    fetch(`https://hidden-reef-73681.herokuapp.com/updateProduct/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(update),
@@ -36,7 +36,7 @@ const Manager = () => {
   };
 
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/deleteProduct/${id}`, {
+    fetch(`https://hidden-reef-73681.herokuapp.com/deleteProduct/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
