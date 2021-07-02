@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AdminBar from "../Shared/AdminBar";
+import { FaTrash } from "react-icons/fa";
 
 const Transition = () => {
   //? State
@@ -30,6 +29,10 @@ const Transition = () => {
             <th className="text-secondary" scope="col">
               Paid
             </th>
+
+            <th className="text-secondary" scope="col">
+              Order status
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +43,7 @@ const Transition = () => {
               <td>{order.email}</td>
 
               <td>{order.totalPrice}</td>
+              <td>{order.status}</td>
             </tr>
           ))}
         </tbody>

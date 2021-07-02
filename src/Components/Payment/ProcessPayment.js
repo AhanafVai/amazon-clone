@@ -18,7 +18,7 @@ const ProcessPayment = () => {
       paymentId,
       email: currentUser.email,
       cartItems: items,
-
+      status: "Pending",
       totalPrice: cartTotal,
     };
 
@@ -30,7 +30,7 @@ const ProcessPayment = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          alert("Payment in process");
+          alert("Order in process");
         }
       });
   };

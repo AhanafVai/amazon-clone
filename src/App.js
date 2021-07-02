@@ -14,6 +14,8 @@ import "./App.css";
 import Admin from "./Components/Admin/Admin";
 import Inventory from "./Components/Admin/Inventory/Inventory";
 import Transition from "./Components/Admin/Transition/Transition";
+import Manager from "./Components/Admin/Manager/Manager";
+import Admins from "./Components/Admin/Admins/Admins";
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/inventory" component={Inventory} />
+            <Route exact path="/manager" component={Manager} />
             <Route exact path="/transition" component={Transition} />
+            <Route exact path="/makeAdmin" component={Admins} />
             <PrivateRoute exact path="/checkout" component={Checkout} />
             <PrivateRoute exact path="/orders" component={Orders} />
             <Route exact path="/signup" component={Signup} />

@@ -43,6 +43,13 @@ const Header = () => {
       .then((data) => setItems(data));
   }, [search]);
 
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    fetch("http://localhost:5000/getAdmin?email=" + currentUser.email)
+      .then((res) => res.json())
+      .then((data) => setIsAdmin(data));
+  }, []);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -115,11 +122,27 @@ const Header = () => {
                   </div>
                 )}
               </li>
+
+              {/* <li className="nav-item nav-link">
+                <Link to="/dashboard" className="nav-link">
+                  <span>Dashboard</span>
+                </Link>
+              </li> */}
+
               <li className="nav-item nav-link">
                 <Link to="/orders" className="nav-link">
                   <span>Orders </span>
                 </Link>
               </li>
+
+              {isAdmin && (
+                <li className="nav-item nav-link">
+                  <Link to="/admin" className="nav-link">
+                    <span>Admin </span>
+                  </Link>
+                </li>
+              )}
+
               <li className="nav-item nav-link">
                 <Link to="/cart" className="nav-link">
                   <MdAddShoppingCart className="header__cartIcon" />

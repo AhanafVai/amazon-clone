@@ -10,6 +10,7 @@ const AddProduct = ({ handleAddProducts }) => {
 
   const onSubmit = (data) => {
     const productData = {
+      id: data.id,
       title: data.title,
       price: data.price,
       description: data.description,
@@ -53,8 +54,14 @@ const AddProduct = ({ handleAddProducts }) => {
         className="card"
         style={{ maxWidth: "50rem" }}
       >
-        <h4 className="text-center pt-3">Add Product</h4>
+        <h4 className="text-center pt-3">Update Product</h4>
         <div className="card-body">
+          <input
+            type="text"
+            className="form-control my-2"
+            placeholder="Product id"
+            {...register("id")}
+          />
           <input
             type="text"
             className="form-control my-2"

@@ -20,7 +20,6 @@ const OrderContainer = ({ order }) => {
       });
   };
 
-  console.log(order);
   return (
     <div className="col-4 col-sm-5 d-flex justify-content-center">
       <div className="card my-5 p-3" style={{ maxWidth: "20rem" }}>
@@ -32,7 +31,7 @@ const OrderContainer = ({ order }) => {
           <div style={{ height: "200px", overflowY: "scroll" }}>
             <span className="row">
               {order.cartItems.map((items, index) => (
-                <p className="d-flex justify-content-between">
+                <p key={items.id} className="d-flex justify-content-between">
                   <small>
                     {index + 1}. {items.title}
                   </small>

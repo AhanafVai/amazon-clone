@@ -5,7 +5,7 @@ import { useCart } from "react-use-cart";
 const CartItems = () => {
   //? useCart properties
   const { items, updateItemQuantity, removeItem } = useCart();
-
+  console.log(items);
   return (
     <div className="col-md-8">
       <div className="cart__ItemContainer">
@@ -14,7 +14,7 @@ const CartItems = () => {
         {items.map((item) => {
           return (
             <div
-              key={item._id}
+              key={item.id}
               className="d-flex p-2 align-items-center border-bottom"
             >
               <img
@@ -35,7 +35,7 @@ const CartItems = () => {
                 <div className="input-group d-flex">
                   <button
                     onClick={() =>
-                      updateItemQuantity(item._id, item.quantity + 1)
+                      updateItemQuantity(item.id, item.quantity + 1)
                     }
                     className="btn btn-secondary"
                     type="button"
@@ -50,7 +50,7 @@ const CartItems = () => {
 
                   <button
                     onClick={() =>
-                      updateItemQuantity(item._id, item.quantity - 1)
+                      updateItemQuantity(item.id, item.quantity - 1)
                     }
                     className="btn btn-secondary"
                     type="button"
@@ -58,7 +58,7 @@ const CartItems = () => {
                     -
                   </button>
                   <button
-                    onClick={() => removeItem(item._id)}
+                    onClick={() => removeItem(item.id)}
                     className="btn btn-danger ms-3"
                     type="button"
                   >
